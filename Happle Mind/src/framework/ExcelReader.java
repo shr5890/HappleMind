@@ -2,14 +2,10 @@ package framework;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.TreeMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
-import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
+import com.google.common.collect.TreeBasedTable;
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -20,9 +16,10 @@ import org.apache.poi.ss.usermodel.Workbook;
 
 public class ExcelReader {
 
+	public static Table<String, String, TreeMap<String, TreeMap<String, String>>> table; 
 	public void readExcel(String excelFilePath, TreeMap<String, List<String>> HashWorkSheets) {
 		try{											
-			Table<String, String, TreeMap<String, TreeMap<String, String>>> table = HashBasedTable.create();
+			table = TreeBasedTable.create();
 			Map<String,Integer> HeaderPositions = new TreeMap<String,Integer>();
 			TreeMap<String, String> ExecutionScenarios = new TreeMap<String,String>();
 			TreeMap<String, TreeMap<String, String>> totalExecutionScenarios = new TreeMap<String, TreeMap<String, String>>();
@@ -103,15 +100,7 @@ public class ExcelReader {
 				System.out.println(table);
 				workbook.close();
 				inputStream.close();
-			}
-			Set<String> rowkeys = table.rowKeySet();
-			Set<String> columnkeys = table.columnKeySet();
-			for(String i: rowkeys){
-				System.out.println(table.rowMap());
-				for(String j: columnkeys){
-					System.out.println(table.get(i, j));
-				}				
-			}
+			}			
 		}catch(Exception e){			
 			e.printStackTrace();
 		}

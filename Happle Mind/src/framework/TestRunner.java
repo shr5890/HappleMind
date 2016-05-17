@@ -1,25 +1,13 @@
 package framework;
 
-import java.io.File;
-import java.util.Arrays;
-import java.util.List;
-import java.util.TreeMap;
+import java.util.*;
 
 public class TestRunner {
+	public static String myCurrentDir;
 	public static void main(String[] args){
-		String myCurrentDir = System.getProperty("user.dir")
-	            + File.separator
-	            + System.getProperty("sun.java.command")
-	                    .substring(0, System.getProperty("sun.java.command").lastIndexOf("."))
-	                    .replace(".", File.separator);
-	    System.out.println("Main Class' Current Directory : "+myCurrentDir);
-	    File fileToTest = new File(myCurrentDir);
-	    String parentDir = fileToTest.getParent();
-	    fileToTest = new File(parentDir);
-	    String ProjectDir = fileToTest.getParent();	   
-	    System.out.println("Project Directory : "+ProjectDir);
-	    String ExcelDir = ProjectDir+"\\TestscriptManager\\";
-	    ExcelDir="D:\\workspace\\Happle Mind\\TestscriptManager\\";
+		myCurrentDir = System.getProperty("user.dir");          
+	    System.out.println("Present Project Directory : "+ System.getProperty("user.dir"));
+	    String ExcelDir = myCurrentDir+"\\TestscriptManager\\";	    
 	    System.out.println("Excel Path : "+ExcelDir);
 	    String[] arrWorkBooks = new String[args.length];	    	   
 	    for(int i = 0; i < args.length ; i++){
@@ -34,5 +22,7 @@ public class TestRunner {
 	    }
 	    ExcelReader ER = new ExcelReader();
 	    ER.readExcel(ExcelDir,HashWorkSheets);
+	    XMLGenerator XMLG = new XMLGenerator();
+	    XMLG.createXML();
 	}
 }
