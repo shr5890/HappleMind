@@ -17,8 +17,7 @@ public class CucumberRuntime {
 			ro.getFeaturePaths().clear();
 			String feature = "src\\applications\\Features";		  
 			ro.getFeaturePaths().add(feature);				
-			String tags = Joiner.on(",").join(XMLGenerator.Scenarios);
-			System.out.println(tags);
+			String tags = Joiner.on(",").join(XMLGenerator.Scenarios);			
 			ro.getFilters().add(tags);						
 			ClassFinder classFinder=new ResourceLoaderClassFinder(resourceLoader,classLoader);
 			Runtime runtime=new Runtime(resourceLoader,classFinder,classLoader,ro);

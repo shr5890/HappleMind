@@ -27,9 +27,7 @@ public class XMLGenerator extends ExcelReader{
 			doc.appendChild(rootElement);			
 			for (Cell<String, String, TreeMap<String, TreeMap<String, String>>> cell: table.cellSet()){
 			    System.out.println(" ====================== ");
-				System.out.println(cell.getRowKey());
-			    System.out.println(cell.getColumnKey());
-			    System.out.println(" ====================== ");
+				System.out.print(cell.getRowKey()+" "+cell.getColumnKey()+" ");
 			    Element ExcelFile = doc.createElement("excelfile");
 			    ExcelFile.setAttribute("name", cell.getRowKey());
 			    rootElement.appendChild(ExcelFile);
@@ -38,17 +36,14 @@ public class XMLGenerator extends ExcelReader{
 			    ExcelFile.appendChild(SheetName);
 			    TreeMap<String, TreeMap<String, String>> ScenarioFeatures = cell.getValue();			    
 			    Set<String> Featurekeys = ScenarioFeatures.keySet();
-		        for(String key1: Featurekeys){
-		            System.out.println(key1);
+		        for(String key1: Featurekeys){		            
 		            Element TestCaseNumber = doc.createElement("testcasenumber");
 		            TestCaseNumber.setAttribute("id", key1);
 		            SheetName.appendChild(TestCaseNumber);		            
 		            intInd++;		            
 		            TreeMap<String, String> ScenarioData = ScenarioFeatures.get(key1);
 		            Set<String> Datakeys = ScenarioData.keySet();
-		            for(String key2: Datakeys){
-		            	
-			            System.out.println(key2+" : "+ScenarioData.get(key2));
+		            for(String key2: Datakeys){		            				            
 			            if(key2.equals("Scenario Description")){
 			            	Element ScenarioDesc = doc.createElement("scenariodesc");
 			            	TestCaseNumber.appendChild(ScenarioDesc);
@@ -67,10 +62,10 @@ public class XMLGenerator extends ExcelReader{
 			            	ScenarioNo.appendChild(doc.createTextNode(ScenarioData.get(key2)));
 			            }			            			           
 		            }
-		        }			  
-			}			
+		        }		        
+			}
+			System.out.println(" ====================== ");
 			System.out.println("Total Scenarios : "+intInd);
-			System.out.println("Scenario Size : "+Scenarios.size());
 			System.out.println("Scenarios : "+Scenarios);									
 		    TransformerFactory transformerFactory = TransformerFactory.newInstance();
 		    Transformer transformer = transformerFactory.newTransformer();
@@ -79,7 +74,9 @@ public class XMLGenerator extends ExcelReader{
 			String myCurrentDir = System.getProperty("user.dir");
 			StreamResult result = new StreamResult(new File(myCurrentDir+"\\Details.xml"));
 			transformer.transform(source, result);
+			System.out.println(" ====================== ");
 			System.out.println("XML saved!");
+			System.out.println(" ====================== ");
 		} catch (ParserConfigurationException pce) {
 			pce.printStackTrace();
 		} catch (TransformerException te) {

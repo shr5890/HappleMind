@@ -7,9 +7,8 @@ public class TestRunner {
 	public static void main(String[] args){
 		try{
 			myCurrentDir = System.getProperty("user.dir");          
-			System.out.println("Present Project Directory : "+ System.getProperty("user.dir"));
-			String ExcelDir = myCurrentDir+"\\TestscriptManager\\";	    
-			System.out.println("Excel Path : "+ExcelDir);
+			System.out.println("Execution Started");
+			String ExcelDir = myCurrentDir+"\\TestscriptManager\\";	    			
 			String[] arrWorkBooks = new String[args.length];	    	   
 			for(int i = 0; i < args.length ; i++){
 				arrWorkBooks[i] = args[i].substring(0, (args[i].indexOf('-')));
@@ -17,7 +16,7 @@ public class TestRunner {
 			TreeMap<String, List<String>> HashWorkSheets = new TreeMap<String,List<String>>();
 			for(int i = 0; i < args.length ; i++){
 				String temp = args[i].substring(args[i].indexOf('-')+1, (args[i].length()));
-				String[] tempsheet = temp.split(";");	    	
+				String[] tempsheet = temp.split(",");	    	
 				List<String> lsttempsheet = Arrays.asList(tempsheet);	    	
 				HashWorkSheets.put(arrWorkBooks[i], lsttempsheet);	    	
 			}
