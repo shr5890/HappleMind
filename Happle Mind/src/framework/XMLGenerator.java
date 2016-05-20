@@ -26,7 +26,8 @@ public class XMLGenerator extends ExcelReader{
 			Element rootElement = doc.createElementNS(TestRunner.myCurrentDir, "TestScenarios");
 			doc.appendChild(rootElement);			
 			for (Cell<String, String, TreeMap<String, TreeMap<String, String>>> cell: table.cellSet()){
-			    System.out.println(" ====================== ");
+				System.out.println();
+			    System.out.println("======================");
 				System.out.print(cell.getRowKey()+" "+cell.getColumnKey()+" ");
 			    Element ExcelFile = doc.createElement("excelfile");
 			    ExcelFile.setAttribute("name", cell.getRowKey());
@@ -50,7 +51,7 @@ public class XMLGenerator extends ExcelReader{
 			            	ScenarioDesc.appendChild(doc.createTextNode(ScenarioData.get(key2)));
 			            }
 			            else if(key2.equals("Scenario ID")){
-			            	System.out.println(ScenarioData.get(key2));
+			            	System.out.print(ScenarioData.get(key2)+" ");
 			            	Scenarios.add(ScenarioData.get(key2));
 			            	Element ScenarioID = doc.createElement("scenarioid");
 			            	TestCaseNumber.appendChild(ScenarioID);
@@ -64,7 +65,8 @@ public class XMLGenerator extends ExcelReader{
 		            }
 		        }		        
 			}
-			System.out.println(" ====================== ");
+			System.out.println();
+			System.out.println("======================");
 			System.out.println("Total Scenarios : "+intInd);
 			System.out.println("Scenarios : "+Scenarios);									
 		    TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -74,9 +76,9 @@ public class XMLGenerator extends ExcelReader{
 			String myCurrentDir = System.getProperty("user.dir");
 			StreamResult result = new StreamResult(new File(myCurrentDir+"\\Details.xml"));
 			transformer.transform(source, result);
-			System.out.println(" ====================== ");
+			System.out.println("======================");
 			System.out.println("XML saved!");
-			System.out.println(" ====================== ");
+			System.out.println("======================");
 		} catch (ParserConfigurationException pce) {
 			pce.printStackTrace();
 		} catch (TransformerException te) {

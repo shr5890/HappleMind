@@ -7,7 +7,9 @@ public class TestRunner {
 	public static void main(String[] args){
 		try{
 			myCurrentDir = System.getProperty("user.dir");          
-			System.out.println("Execution Started");
+			System.out.println("-------------------------------");
+			System.out.println(":::::::Execution Started:::::::");
+			System.out.println("-------------------------------");
 			String ExcelDir = myCurrentDir+"\\TestscriptManager\\";	    			
 			String[] arrWorkBooks = new String[args.length];	    	   
 			for(int i = 0; i < args.length ; i++){
