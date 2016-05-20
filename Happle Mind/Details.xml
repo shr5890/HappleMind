@@ -2,24 +2,9 @@
 <TestScenarios xmlns="C:\Users\413455\git\Happle Mind">
 <excelfile name="TestscriptManager.xls">
 <sheetname name="Set 1">
-<testcasenumber id="1">
-<scenariodesc>Set 1 Test scenario 1</scenariodesc>
-<scenarioid>Set 1 Test case 1</scenarioid>
-<Scenariono>1</Scenariono>
-</testcasenumber>
-<testcasenumber id="2">
-<scenariodesc>Set 1 Test scenario 2</scenariodesc>
-<scenarioid>Set 1 Test case 2</scenarioid>
-<Scenariono>2</Scenariono>
-</testcasenumber>
-<testcasenumber id="3">
-<scenariodesc>Set 1 Test scenario 3</scenariodesc>
-<scenarioid>Set 1 Test case 3</scenarioid>
-<Scenariono>3</Scenariono>
-</testcasenumber>
 <testcasenumber id="4">
 <scenariodesc>Set 1 Test scenario 4</scenariodesc>
-<scenarioid>Set 1 Test case 4</scenarioid>
+<scenarioid>@Scenario1</scenarioid>
 <Scenariono>4</Scenariono>
 </testcasenumber>
 </sheetname>
@@ -28,51 +13,8 @@
 <sheetname name="Set 2">
 <testcasenumber id="1">
 <scenariodesc>Set 2 Test scenario 1</scenariodesc>
-<scenarioid>Set 2 Test case 1</scenarioid>
+<scenarioid>@Scenario2</scenarioid>
 <Scenariono>1</Scenariono>
-</testcasenumber>
-<testcasenumber id="2">
-<scenariodesc>Set 2 Test scenario 2</scenariodesc>
-<scenarioid>Set 2 Test case 2</scenarioid>
-<Scenariono>2</Scenariono>
-</testcasenumber>
-<testcasenumber id="5">
-<scenariodesc>Set 2 Test scenario 5</scenariodesc>
-<scenarioid>Set 2 Test case 5</scenarioid>
-<Scenariono>5</Scenariono>
-</testcasenumber>
-</sheetname>
-</excelfile>
-<excelfile name="TestscriptManager.xlsx">
-<sheetname name="Set 1">
-<testcasenumber id="1">
-<scenariodesc>Set 1 Test scenario 1</scenariodesc>
-<scenarioid>Set 1 Test case 1</scenarioid>
-<Scenariono>1</Scenariono>
-</testcasenumber>
-<testcasenumber id="3">
-<scenariodesc>Set 1 Test scenario 3</scenariodesc>
-<scenarioid>Set 1 Test case 3</scenarioid>
-<Scenariono>3</Scenariono>
-</testcasenumber>
-<testcasenumber id="4">
-<scenariodesc>Set 1 Test scenario 4</scenariodesc>
-<scenarioid>Set 1 Test case 4</scenarioid>
-<Scenariono>4</Scenariono>
-</testcasenumber>
-</sheetname>
-</excelfile>
-<excelfile name="TestscriptManager.xlsx">
-<sheetname name="Set 2">
-<testcasenumber id="2">
-<scenariodesc>Set 2 Test scenario 2</scenariodesc>
-<scenarioid>Set 2 Test case 2</scenarioid>
-<Scenariono>2</Scenariono>
-</testcasenumber>
-<testcasenumber id="5">
-<scenariodesc>Set 2 Test scenario 5</scenariodesc>
-<scenarioid>Set 2 Test case 5</scenarioid>
-<Scenariono>5</Scenariono>
 </testcasenumber>
 </sheetname>
 </excelfile>
