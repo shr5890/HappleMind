@@ -1,11 +1,5 @@
 package framework;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Properties;
-
 import com.google.common.base.Joiner;
 import cucumber.runtime.io.*;
 import cucumber.runtime.*;
