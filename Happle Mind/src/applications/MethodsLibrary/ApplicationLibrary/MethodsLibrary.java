@@ -1,4 +1,4 @@
-package applications.MethodsLibrary;
+package applications.MethodsLibrary.ApplicationLibrary;
 
 public class MethodsLibrary {	
 	public static void method1(){
