@@ -2,7 +2,7 @@
 Feature: Feature for Testing
 @Scenario1
 Scenario Outline: Testing Feature 1
-Given I am Shaikh "<User>" and "<Password>"
+Given I am Shaikh with "<User>" and "<Password>"
 |input|
 |3		|
 Then I am COC champ

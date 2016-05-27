@@ -2,9 +2,17 @@ package feature.Reporters;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.TreeMap;
 import cucumber.api.java.en.*;
 
 public class BasePage {
+	
+	public TreeMap<String, List<String>> TreeReportScenarios = new TreeMap<String, List<String>>();
+	public static TreeMap<String, List<String>> TreeReportScenarioSteps = new TreeMap<String, List<String>>();
+	public static List<String> ScenarioSteps= new ArrayList<String>();
+	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void getCurrentScenarioStep(Object object, Object[] Obj){		
 		try {			
@@ -13,22 +21,14 @@ public class BasePage {
 				int i = 0;
 				argClasses = new Class[Obj.length];
 				for(Object obj : Obj){
-				System.out.println(obj.getClass().getSimpleName());				
-				argClasses[i] = obj.getClass();
-				i++;
+					argClasses[i] = obj.getClass();
+					i++;
 				}
 			}
 			Class clazz = object.getClass();
-			String strMethodName = Thread.currentThread().getStackTrace()[2].getMethodName();			
-			System.out.println(strMethodName);
-			Method method = null;			
-//			try{
-//				method = clazz.getMethod(strMethodName);
-//			}catch(NoSuchMethodException NSME){
-//				;;
-//			}
+			String strMethodName = Thread.currentThread().getStackTrace()[2].getMethodName();
+			Method method = null;
 			try{				
-				//				Method m = clazz.getDeclaredMethod("foo", argClasses);
 				method = clazz.getDeclaredMethod(strMethodName, argClasses);
 			}catch(NoSuchMethodException NSME){
 				;
@@ -58,11 +58,13 @@ public class BasePage {
 			}else{
 				throw new Exception("No Annotation Found");
 			}			
-			strAnnotationName = annotation.annotationType().getSimpleName();			
-//			System.out.println(strAnnotationName);
-//			System.out.println(strAnnotationValue);
-			System.out.println("Step Definition Name : @"+strAnnotationName+"(\""+strAnnotationValue+"\")");
-//			System.out.println("Step Scenario Name : "+strAnnotationName+" "+strAnnotationValue);
+			strAnnotationName = annotation.annotationType().getSimpleName();
+			strAnnotationValue = strAnnotationValue.replaceAll("\'", "\\\\\'");
+			strAnnotationValue = strAnnotationValue.replaceAll("\"", "\\\\\"");
+			String ScenarioStep = "@"+strAnnotationName+"(\""+strAnnotationValue+"\")";
+			System.out.println(ScenarioStep);
+			System.out.println(strAnnotationName+" "+strMethodName.replace("_", " "));
+			ScenarioSteps.add(strAnnotationName+" "+strMethodName.replace("_", " "));
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

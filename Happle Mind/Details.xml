@@ -2,6 +2,11 @@
 <TestScenarios xmlns="C:\Users\413455\git\Happle Mind">
 <excelfile name="TestscriptManager.xls">
 <sheetname name="Set1">
+<testcasenumber id="2">
+<scenariodesc>Set 1 Test scenario 2</scenariodesc>
+<scenarioid>@Scenario2</scenarioid>
+<Scenariono>2</Scenariono>
+</testcasenumber>
 <testcasenumber id="4">
 <scenariodesc>Set 1 Test scenario 4</scenariodesc>
 <scenarioid>@Scenario1</scenarioid>
