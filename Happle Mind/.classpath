@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="Jars/Cucumber/cucumber-reporting-2.2.0.jar"/>
 	<classpathentry kind="lib" path="Jars/Cucumber/junit-4.12.jar"/>
 	<classpathentry kind="lib" path="C:/Users/413455/Downloads/apache-common/apache-commons.jar"/>
+	<classpathentry kind="lib" path="Jars/jfreechart-1.0.19/jfreechart-1.0.19-demo.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

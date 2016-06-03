@@ -1,14 +1,13 @@
 package applications.StepDefinitions;
 
 import feature.Reporters.BasePage;
-
 import applications.MethodsLibrary.ApplicationLibrary.MethodsLibrary;
 import cucumber.api.DataTable;
 import cucumber.api.java.en.*;
 
-public class StepDefinition1 extends BasePage {		
+public class StepDefinition1 extends BasePage {			
 	@Given("^I am Shaikh with \"([^\"]*)\" and \"([^\"]*)\"$")
-	public void I_am_Shaikh_with_User_and_Password(String str, String str2, DataTable DT){
+	public void I_am_Shaikh_with_User_and_Password(String str, String str2, DataTable DT){		
 		getCurrentScenarioStep(new StepDefinition1(), new Object[]{str,str2,DT});		
 		MethodsLibrary.method1();		
 	}

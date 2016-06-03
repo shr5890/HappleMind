@@ -1,11 +1,15 @@
 package framework;
 
+import java.io.File;
 import java.util.*;
 
 public class TestRunner {
 	public static String myCurrentDir;
+	public static File FilePath;
 	public static void main(String[] args){
 		try{
+			String strCurrentDateandTime = TimeGenerator.getCurrentDateAndTime();
+			TimeGenerator.getCustomTimeFormat(strCurrentDateandTime);
 			myCurrentDir = System.getProperty("user.dir");          
 			System.out.println("-------------------------------");
 			System.out.println(":::::::Execution Started:::::::");
@@ -26,6 +30,11 @@ public class TestRunner {
 			ER.readExcel(ExcelDir,HashWorkSheets);
 			XMLGenerator XMLG = new XMLGenerator();
 			XMLG.createXML();
+			//HTML Report Creation
+			HTMLWriter HW = new HTMLWriter();
+			FilePath = HW.createReportDirectory(strCurrentDateandTime);
+			HW.generateHeader(strCurrentDateandTime);
+//			HW.generateMenuList();
 			CucumberRuntime CR = new CucumberRuntime();
 			CR.CucumberRunner();
 		}

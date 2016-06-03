@@ -1,0 +1,66 @@
+.header {
+	padding-top: 10px;
+	padding-right: 300px;
+	padding-left: 300px;
+	background-color:  #3CB371;
+}		
+
+.menulist {
+	font-family: verdana, arial, sans-serif;
+	font-size: 10pt;
+	margin: 10px;
+	background-color: #65e6d9;
+}
+
+.content {
+	font-family: verdana, arial, sans-serif;
+	font-size: 10pt;
+	margin: 30px;
+	background-color: #66CDAA;
+}
+
+.footer {
+	font-family: verdana, arial, sans-serif;
+	font-size: 10pt;
+	text-align: center;
+	padding-top: 5px;	
+	padding-left: 80px;
+	padding-right: 80px;
+	color: #800517;
+	margin: 10px;
+	background-color: #072c28;
+	color: white;
+}
+
+.passed {
+color: #39FF14;
+}
+
+.failed {
+color: #ff3232;
+}
+
+.warned {
+color: orange;
+}
+
+.norun {
+color: cyan;
+}
+
+.corporateName {
+	font-family: verdana, arial, sans-serif;
+	color: #800517;
+	border: 2px solid white;
+	text-align: center;
+	padding-top: 10px;
+	padding-right: 80px;
+	padding-bottom: 10px;
+	padding-left: 80px;
+	background-color: #65e6d9;
+	width: 560px;
+	height: 80px;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+}
