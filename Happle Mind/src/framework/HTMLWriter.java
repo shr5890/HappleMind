@@ -15,8 +15,6 @@ import org.jfree.chart.entity.StandardEntityCollection;
 
 import framework.chartobjects.Charts;
 
-import framework.XMLGenerator;
-
 public class HTMLWriter {
 	public static void GenerateHTML(String CurrentDateandTime, String chartTitle, String[] arrchartSubjects, int[] arrchartSubjectValues) throws IOException {
 		try{
