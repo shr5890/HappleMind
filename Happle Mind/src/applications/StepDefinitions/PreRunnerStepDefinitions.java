@@ -29,6 +29,7 @@ public class PreRunnerStepDefinitions extends BasePage{
 	@After
 	public void after() {
 		try{
+		//System.out.println(FeatureScenario.getStatus());
 		System.out.println(FeatureScenario.getStatus());
 		ScenarioData.add(FeatureScenario.getStatus());				
 		TreeReportScenarios.put(arrScenarioTags[0].toString(),ScenarioData);
