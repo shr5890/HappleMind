@@ -39,7 +39,7 @@ public class PreRunnerStepDefinitions extends BasePage{
 		}
 	}
 
-	public void getScenarioData(Scenario scenario){				
+	public void getScenarioData(Scenario scenario){
 		String arrFeatureID = FeatureScenario.getId().substring(0, FeatureScenario.getId().indexOf(';')).toUpperCase();
 		System.out.println(arrFeatureID);
 		ScenarioData.add(arrFeatureID);
