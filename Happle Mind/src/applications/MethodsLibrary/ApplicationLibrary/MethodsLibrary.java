@@ -12,7 +12,7 @@ public class MethodsLibrary {
 	}	
 	public static void method2(){
 		try{
-//			Thread.sleep(3000);
+////			Thread.sleep(3000);
 //			System.out.println("Step Def written");
 		}
 		catch(Exception e){
