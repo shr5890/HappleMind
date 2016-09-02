@@ -13,6 +13,12 @@ public class MethodsLibrary {
 	public static void method2(){
 		try{
 			Thread.sleep(3000);
+			if(true){
+			System.out.println("Step Def2 written");				
+			}
+			if(!false){
+			System.out.println("Step Def3 written");				
+			}
 //			System.out.println("Step Def written");
 		}
 		catch(Exception e){
