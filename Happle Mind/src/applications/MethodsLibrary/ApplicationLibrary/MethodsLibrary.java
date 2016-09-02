@@ -3,7 +3,7 @@ package applications.MethodsLibrary.ApplicationLibrary;
 public class MethodsLibrary {	
 	public static void method1(){
 		try{
-////			Thread.sleep(2000);
+			Thread.sleep(2000);
 //			System.out.println("Step Def written");
 		}
 		catch(Exception e){
@@ -12,7 +12,7 @@ public class MethodsLibrary {
 	}	
 	public static void method2(){
 		try{
-////			Thread.sleep(3000);
+			Thread.sleep(3000);
 //			System.out.println("Step Def written");
 		}
 		catch(Exception e){
