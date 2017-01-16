@@ -9,7 +9,7 @@ public class MethodsLibrary {
 		catch(Exception e){
 			e.printStackTrace();
 		}
-	}	
+	}
 	public static void method2(){
 		try{
 			Thread.sleep(1000);
