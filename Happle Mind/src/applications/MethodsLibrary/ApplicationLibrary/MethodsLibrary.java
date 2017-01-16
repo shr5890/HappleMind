@@ -4,6 +4,7 @@ public class MethodsLibrary {
 	public static void method1(){
 		try{
 			Thread.sleep(2000);
+			Thread.sleep(2000);
 //			System.out.println("Step Def written");
 		}
 		catch(Exception e){
@@ -22,6 +23,7 @@ public class MethodsLibrary {
 			System.out.println("Step Def4A written");
 			System.out.println("Step Def5 written");
 			System.out.println("Step Def6 written");
+			System.out.println("Step Def7 written");
 			}
 //			System.out.println("Step Def written");
 		}
