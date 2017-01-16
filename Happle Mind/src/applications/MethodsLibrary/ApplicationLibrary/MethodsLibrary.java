@@ -15,6 +15,7 @@ public class MethodsLibrary {
 			Thread.sleep(1000);
 			if(true){
 			System.out.println("Step Def2 written");				
+			System.out.println("Step Def1 written");    
 			}
 			if(!false){
 			System.out.println("Step Def3 written");				
