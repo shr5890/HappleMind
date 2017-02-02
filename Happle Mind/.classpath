@@ -16,5 +16,6 @@
 	<classpathentry exported="true" kind="lib" path="C:/Users/413455/Downloads/apache-common/apache-commons.jar"/>
 	<classpathentry exported="true" kind="lib" path="Jars/jfreechart-1.0.19/jfreechart-1.0.19-demo.jar"/>
 	<classpathentry exported="true" kind="lib" path="Jars/TestNG/testng-6.9.10.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_97"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
