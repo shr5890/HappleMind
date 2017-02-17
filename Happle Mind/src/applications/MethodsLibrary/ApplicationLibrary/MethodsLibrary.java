@@ -29,7 +29,8 @@ public class MethodsLibrary {
 			System.out.println("Step Def4F written");
 			System.out.println("Step Def4G written");
 			System.out.println("Step Def5A written");
-			System.out.println("Step Def5 written");
+			System.out.println("Step Def5B written");
+                        System.out.println("Step Def5D written");
 			System.out.println("Step Def6 written");
 			System.out.println("Step Def7 written");
 			}
