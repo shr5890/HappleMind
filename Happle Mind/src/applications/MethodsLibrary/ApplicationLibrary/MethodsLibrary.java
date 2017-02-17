@@ -1,4 +1,4 @@
-package applications.MethodsLibrary.ApplicationLibrary;
+	package applications.MethodsLibrary.ApplicationLibrary;
 
 public class MethodsLibrary {	
 	public static void method1(){
@@ -26,6 +26,8 @@ public class MethodsLibrary {
 			System.out.println("Step Def4C written");
 			System.out.println("Step Def4D written");
 			System.out.println("Step Def4E written");
+			System.out.println("Step Def4G written");
+			System.out.println("Step Def5A written");
 			System.out.println("Step Def5 written");
 			System.out.println("Step Def6 written");
 			System.out.println("Step Def7 written");
