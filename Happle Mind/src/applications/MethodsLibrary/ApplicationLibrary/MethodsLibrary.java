@@ -20,6 +20,9 @@ public class MethodsLibrary {
 			}
 			if(!false){
 				System.out.println("Step Def3 written");
+				System.out.println("Step Def3A written");
+				System.out.println("Step Def3B written");
+				System.out.println("Step Def3C written");
 				System.out.println("Step Def4A written");
 				System.out.println("Step Def4B written");
 				System.out.println("Step Def4C written");
