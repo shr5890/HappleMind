@@ -3,8 +3,11 @@ Feature: Feature for Testing
 @Scenario1
 Scenario Outline: Testing Feature 1
 Given I am Shaikh with "<User>" and "<Password>"
-|input|
-|3		|
+| Surname	| FirstName			| LastName	| Native	| Hometown	|
+| Shaikh	| Hifzur			| Rahman	| TN		| Mumbai	|
+| Shaikh	| Hafeezur			| Rahman	| TN		| Mumbai	|
+| Shaikh	| Mahadiyathul		| Khatija	| TN		| Chennai	|
+| Sayed		| Najmussahar		| -			| TN		| Mumbai	|
 Then I am COC champ
 When I am Hifzur
 Then I am cool

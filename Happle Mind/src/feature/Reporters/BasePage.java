@@ -3,16 +3,19 @@ package feature.Reporters;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.TreeMap;
+
+import cucumber.api.DataTable;
 import cucumber.api.java.en.*;
 
 public class BasePage {
-	
+
 	public TreeMap<String, List<String>> TreeReportScenarios = new TreeMap<String, List<String>>();
 	public static TreeMap<String, List<String>> TreeReportScenarioSteps = new TreeMap<String, List<String>>();
 	public static List<String> ScenarioSteps= new ArrayList<String>();
-	
+
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void getCurrentScenarioStep(Object object, Object[] Obj){		
 		try {			
@@ -68,5 +71,21 @@ public class BasePage {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
+	}
+
+	public List<HashMap<String,String>> convertFeatureData(DataTable DT){
+		List<HashMap<String,String>> FeatureData = new ArrayList<HashMap<String,String>>();  
+		HashMap<String,String> ColumnData = null;
+		List<String> ColumnNames = DT.raw().get(0);
+		int rows = DT.getGherkinRows().size();
+		for(int i = 0; i < rows-1; i++){
+			ColumnData = new HashMap<String,String>();
+			for(int j = 0; j < ColumnNames.size(); j++){
+				List<String> ColumnValues = DT.raw().get(i+1);
+				ColumnData.put(ColumnNames.get(j), ColumnValues.get(j));
+			}
+			FeatureData.add(ColumnData);
+		}
+		return FeatureData;
 	}
 }
