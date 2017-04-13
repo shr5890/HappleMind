@@ -25,7 +25,7 @@ public class XMLGenerator extends ExcelReader{
 			Document doc = docBuilder.newDocument();			
 			Element rootElement = doc.createElementNS(TestRunner.myCurrentDir, "TestScenarios");
 			doc.appendChild(rootElement);			
-			for (Cell<String, String, TreeMap<String, TreeMap<String, String>>> cell: table.cellSet()){
+			for (Cell<String, String, LinkedHashMap<String, LinkedHashMap<String, String>>> cell: table.cellSet()){
 				System.out.println();
 			    System.out.println("======================");
 				System.out.print(cell.getRowKey()+" "+cell.getColumnKey()+" ");
@@ -35,14 +35,14 @@ public class XMLGenerator extends ExcelReader{
 			    Element SheetName = doc.createElement("sheetname");
 			    SheetName.setAttribute("name", cell.getColumnKey());
 			    ExcelFile.appendChild(SheetName);
-			    TreeMap<String, TreeMap<String, String>> ScenarioFeatures = cell.getValue();			    
+			    LinkedHashMap<String, LinkedHashMap<String, String>> ScenarioFeatures = cell.getValue();			    
 			    Set<String> Featurekeys = ScenarioFeatures.keySet();
 		        for(String key1: Featurekeys){		            
 		            Element TestCaseNumber = doc.createElement("testcasenumber");
 		            TestCaseNumber.setAttribute("id", key1);
 		            SheetName.appendChild(TestCaseNumber);		            
 		            intInd++;		            
-		            TreeMap<String, String> ScenarioData = ScenarioFeatures.get(key1);
+		            LinkedHashMap<String, String> ScenarioData = ScenarioFeatures.get(key1);
 		            Set<String> Datakeys = ScenarioData.keySet();
 		            for(String key2: Datakeys){		            				            
 			            if(key2.equals("Scenario Description")){

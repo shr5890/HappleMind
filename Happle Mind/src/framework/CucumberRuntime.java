@@ -19,7 +19,7 @@ public class CucumberRuntime {
 			ro.getFeaturePaths().add(feature);
 			String tags = Joiner.on(",").join(XMLGenerator.Scenarios);			
 			ro.getFilters().add(tags);			
-//			ro.addPlugin("html:Reports\\");// under cinstruction
+//			ro.addPlugin("html:Reports\\");// under construction
 			ClassFinder classFinder=new ResourceLoaderClassFinder(resourceLoader,classLoader);
 			Runtime runtime=new Runtime(resourceLoader,classFinder,classLoader,ro);			
 			try {

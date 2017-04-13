@@ -19,7 +19,7 @@ public class TestRunner {
 			for(int i = 0; i < args.length ; i++){
 				arrWorkBooks[i] = args[i].substring(0, (args[i].indexOf('-')));
 			}	    
-			TreeMap<String, List<String>> HashWorkSheets = new TreeMap<String,List<String>>();
+			LinkedHashMap<String, List<String>> HashWorkSheets = new LinkedHashMap<String,List<String>>();
 			for(int i = 0; i < args.length ; i++){
 				String temp = args[i].substring(args[i].indexOf('-')+1, (args[i].length()));
 				String[] tempsheet = temp.split(",");	    	

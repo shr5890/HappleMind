@@ -12,7 +12,7 @@ import cucumber.api.java.en.*;
 public class StepDefinition1 extends BasePage {
 	@Given("^I am Shaikh with \"([^\"]*)\" and \"([^\"]*)\"$")
 	public void I_am_Shaikh_with_User_and_Password(String str, String str2, DataTable DT){		
-		getCurrentScenarioStep(new StepDefinition1(), new Object[]{str,str2,DT});
+		getCurrentScenarioStep(new StepDefinition1(), new Object[]{str, str2, DT});
 		List<HashMap<String,String>> FeatureDataTable = convertFeatureData(DT);
 		System.out.println(FeatureDataTable);
 		System.out.println(FeatureDataTable.get(0).get("Surname"));

@@ -16,8 +16,8 @@ import org.apache.poi.ss.usermodel.Workbook;
 
 public class ExcelReader {
 
-	public static Table<String, String, TreeMap<String, TreeMap<String, String>>> table; 
-	public void readExcel(String excelFilePath, TreeMap<String, List<String>> TreeWorkSheets) {
+	public static Table<String, String, LinkedHashMap<String, LinkedHashMap<String, String>>> table; 
+	public void readExcel(String excelFilePath, LinkedHashMap<String, List<String>> TreeWorkSheets) {
 		try{											
 			table = TreeBasedTable.create();			
 			String temppath = excelFilePath;
@@ -47,8 +47,8 @@ public class ExcelReader {
 
 	public void getAllSheetData(Workbook workbook, String strWorkBook){
 		Map<String,Integer> HeaderPositions = new TreeMap<String,Integer>();
-		TreeMap<String, String> ExecutionScenarios = new TreeMap<String,String>();
-		TreeMap<String, TreeMap<String, String>> totalExecutionScenarios = new TreeMap<String, TreeMap<String, String>>();
+		LinkedHashMap<String, String> ExecutionScenarios = new LinkedHashMap<String,String>();
+		LinkedHashMap<String, LinkedHashMap<String, String>> totalExecutionScenarios = new LinkedHashMap<String, LinkedHashMap<String, String>>();
 		String [] SheetNames = new String[workbook.getNumberOfSheets()];			
 		for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
 			SheetNames[i] = workbook.getSheetName(i);			
@@ -97,18 +97,18 @@ public class ExcelReader {
 						ExecutionScenarios.put("Scenario Description", cellScenarioDesc+"");							
 						totalExecutionScenarios.put(row.getRowNum()+"", ExecutionScenarios);
 						table.put(strWorkBook, SheetNames[i], totalExecutionScenarios);
-						ExecutionScenarios=new TreeMap<String,String>();
+						ExecutionScenarios=new LinkedHashMap<String,String>();
 					}
 				}
 			}
-			totalExecutionScenarios = new TreeMap<String, TreeMap<String, String>>();
+			totalExecutionScenarios = new LinkedHashMap<String, LinkedHashMap<String, String>>();
 		}
 	}
 
 	public void getRequiredSheetData(Workbook workbook, String strWorkBook, List<String> LST_Sheets){
 		Map<String,Integer> HeaderPositions = new TreeMap<String,Integer>();
-		TreeMap<String, String> ExecutionScenarios = new TreeMap<String,String>();
-		TreeMap<String, TreeMap<String, String>> totalExecutionScenarios = new TreeMap<String, TreeMap<String, String>>();		
+		LinkedHashMap<String, String> ExecutionScenarios = new LinkedHashMap<String,String>();
+		LinkedHashMap<String, LinkedHashMap<String, String>> totalExecutionScenarios = new LinkedHashMap<String, LinkedHashMap<String, String>>();		
 		for (String SheetName : LST_Sheets) {
 			Sheet Sheet = workbook.getSheet(SheetName);						
 			Iterator<Row> iterator = Sheet.iterator();
@@ -155,11 +155,11 @@ public class ExcelReader {
 						ExecutionScenarios.put("Scenario Description", cellScenarioDesc+"");							
 						totalExecutionScenarios.put(row.getRowNum()+"", ExecutionScenarios);
 						table.put(strWorkBook, SheetName, totalExecutionScenarios);
-						ExecutionScenarios=new TreeMap<String,String>();
+						ExecutionScenarios=new LinkedHashMap<String,String>();
 					}
 				}
 			}
-			totalExecutionScenarios = new TreeMap<String, TreeMap<String, String>>();
+			totalExecutionScenarios = new LinkedHashMap<String, LinkedHashMap<String, String>>();
 		}
 	}
 }

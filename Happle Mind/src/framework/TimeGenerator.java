@@ -7,7 +7,7 @@ public class TimeGenerator {
 	public static String getCurrentDateAndTime(){
 		//***************** Current Date and Time *************************
 		Date date = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("MM_d_yy_h_m_s_S");
+		SimpleDateFormat sdf = new SimpleDateFormat("MMMM_dd_yyyy_hh.mm.ss.SSS_a");
 		System.out.println(date);
 		System.out.println(sdf.format(date));
 		String CurrentDateandTime = sdf.format(date);

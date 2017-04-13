@@ -3,8 +3,7 @@ package applications.MethodsLibrary.ApplicationLibrary;
 public class MethodsLibrary {	
 	public static void method1(){
 		try{
-			Thread.sleep(2000);
-			Thread.sleep(2000);
+			System.out.println("Executing method");
 		}
 		catch(Exception e){
 			e.printStackTrace();
