@@ -38,11 +38,9 @@ public class TestRunner {
 			HW.generateHeader(strCurrentDateandTime);
 			CucumberRuntime CR = new CucumberRuntime();
 			CR.CucumberRunner();
-			HW.generateFooter(XMLGenerator.Scenarios.size());
-			HW.generateMenuList(XMLGenerator.Scenarios);
+			HW.generateFooter(HW.generateMenuList(XMLGenerator.Scenarios).size());
 			HW.generateSummaryReport("Test Summary Report");
 			Desktop.getDesktop().browse(new File(FilePath.toString()+"\\Report.html").toURI());
-//			HW.generateFooter(TotalTCs);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

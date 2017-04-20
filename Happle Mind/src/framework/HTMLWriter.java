@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.jfree.chart.ChartRenderingInfo;
@@ -147,7 +148,8 @@ public class HTMLWriter extends BasePage {
 		}
 	}
 
-	public void generateMenuList(List<String> Scenarios){
+	public List<String> generateMenuList(List<String> Scenarios){
+		List<String> lst = null;
 		try{
 			String myCurrentDir = System.getProperty("user.dir");
 			File MenuListhtmlFile = new File(TestRunner.FilePath+"\\FrameFiles\\MenuList.html");
@@ -165,11 +167,15 @@ public class HTMLWriter extends BasePage {
 			writer.println(nextLine);
 			writer.println("<div><B>Scenario List</B></div>");
 			writer.println("<table width='380' cellpadding=\"2\" cellspacing=\"2\">");
+			lst = new ArrayList<String>();
 			for(String strScenario : Scenarios){
-				writer.println("<tr>");
-				writer.println("<td class = 'customfont'><a href='"+TestRunner.FilePath+"\\Scenarios\\"+strScenario+".html' target='content'><span 'customfont'>"+strScenario+"</span></a></td>");
-				writer.println("<td width= '70' class = 'customfont'><span class = '"+getHTMLClass(TestScriptStatus.get(strScenario).toString())+"'>"+TestScriptStatus.get(strScenario)+"</span></td>");
-				writer.println("</tr>");
+				if(TestScriptStatus.containsKey(strScenario) && !lst.contains(strScenario)){
+					lst.add(strScenario);
+					writer.println("<tr>");
+					writer.println("<td class = 'customfont'><a href='"+TestRunner.FilePath+"\\Scenarios\\"+strScenario+".html' target='content'><span 'customfont'>"+strScenario+"</span></a></td>");
+					writer.println("<td width= '70' class = 'customfont'><span class = '"+getHTMLClass(TestScriptStatus.get(strScenario).toString())+"'>"+TestScriptStatus.get(strScenario)+"</span></td>");
+					writer.println("</tr>");
+				}
 			}
 			writer.println(nextLine);
 			writer.println("</body>");
@@ -180,6 +186,7 @@ public class HTMLWriter extends BasePage {
 		catch(Exception e){
 			e.getStackTrace();
 		}
+		return lst;
 	}
 
 	public PrintWriter initializeMenuContent(HashMap<String,String> ScenarioData){

@@ -20,8 +20,8 @@ public class StepDefinition1 extends BasePage {
 			System.out.println(FeatureDataTable.get(0).get("LastName"));
 			System.out.println(FeatureDataTable.get(0).get("Hometown"));
 			System.out.println(FeatureDataTable.get(0).get("Native"));
-			MethodsLibrary.method1("PASS");
-			MethodsLibrary.method2("WARNING");
+			MethodsLibrary.method1("FAIL");
+			MethodsLibrary.method2("PASS");
 		}finally{
 			saveToReport();
 		}
@@ -31,9 +31,9 @@ public class StepDefinition1 extends BasePage {
 	public void I_am_Hifzur(){
 		try{
 			setCurrentScenarioStep(new StepDefinition1(), null);
+			MethodsLibrary.method1("PASS");
 			MethodsLibrary.method1("WARNING");
-			MethodsLibrary.method1("FAIL");
-			MethodsLibrary.method1("WARNING");
+			MethodsLibrary.method1("PASS");
 		}finally{
 			saveToReport();
 		}
@@ -54,7 +54,7 @@ public class StepDefinition1 extends BasePage {
 	public void I_am_cool(){
 		try{
 			setCurrentScenarioStep(new StepDefinition1(), null);
-			MethodsLibrary.method1("WARNING");
+			MethodsLibrary.method1("PASS");
 			MethodsLibrary.method2("PASS");
 		}finally{
 			saveToReport();
@@ -65,7 +65,7 @@ public class StepDefinition1 extends BasePage {
 	public void I_am_smarty(){
 		try{
 			setCurrentScenarioStep(new StepDefinition1(), null);
-			MethodsLibrary.method1("WARNING");
+			MethodsLibrary.method1("PASS");
 			MethodsLibrary.method2("PASS");
 		}finally{
 			saveToReport();
@@ -76,7 +76,7 @@ public class StepDefinition1 extends BasePage {
 	public void I_am_COC_champ(){
 		try{
 			setCurrentScenarioStep(new StepDefinition1(), null);
-			MethodsLibrary.method1("WARNING");	
+			MethodsLibrary.method1("PASS");	
 		}finally{
 			saveToReport();
 		}

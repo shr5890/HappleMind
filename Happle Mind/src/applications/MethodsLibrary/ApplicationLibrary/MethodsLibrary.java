@@ -7,13 +7,13 @@ public class MethodsLibrary extends CommonLibrary{
 	public static void method1(String str) {
 		try{
 			if(str.equalsIgnoreCase("PASS")){
-				setTestStatus("Run Method 1", "Method 1 is Executed", EachStepStatus.PASS);
+				setTestStatus("Run Method 1", "Method 1 is Executed ksjhdkhkhskdhkhskh"+nextLine+"kkhkjshd kjhfjkshkgjhksj"+nextLine+"hgkjhskjgh"+nextLine+"khskjgh", EachStepStatus.PASS);
 			}else if(str.equalsIgnoreCase("FAIL")){
 				setTestStatus("Run Method 1", "Method 1 is Executed", EachStepStatus.FAIL);
 			}else if(str.equalsIgnoreCase("WARNING")){
 				setTestStatus("Run Method 1", "Method 1 is Executed ksjhdkhkhskdhkhskh kkhkjshd kjhfjkshkgjhksj hgkjhskjgh khskjgh", EachStepStatus.WARNING);
 			}else{
-				setTestStatus("Run Method 1", "Method 1 is Executed ksjhdkhkhskdhkhskh kkhkjshd kjhfjkshkgjhksj hgkjhskjgh khskjgh", EachStepStatus.FAIL);
+				setTestStatus("Run Method 1", "Method 1 is Executed ksjhdkhkhskdhkhskh"+nextLine+"kkhkjshd kjhfjkshkgjhksj"+nextLine+"hgkjhskjgh"+nextLine+"khskjgh", EachStepStatus.FAIL);
 			}
 		}
 		catch(Exception e){

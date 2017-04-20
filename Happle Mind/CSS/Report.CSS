@@ -91,6 +91,7 @@ span.tab{
 	background: black;
 	color: #3CB371;
 	font-weight:bold;
+	text-decoration: underline;
 }
 
 label:hover 
@@ -113,9 +114,10 @@ label:hover
 }
 
 a {
-    color: #3CB371;
+	color: #3CB371;
     text-decoration: none;
     font-weight:bold;
+    text-decoration: underline;
 }
 
 a:hover 
@@ -123,6 +125,14 @@ a:hover
      color:#65e6d9; 
      text-decoration:none; 
      cursor:pointer;  
+}
+
+a:visited {
+    color: hotpink;
+}
+
+a:visited:hover {
+    color: #65e6d9;
 }
 
 .tv { 

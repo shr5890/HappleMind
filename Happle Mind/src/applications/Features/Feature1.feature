@@ -1,7 +1,7 @@
 @FeatureAll
 Feature: Feature for Testing
 
-  @Scenario1
+  @Scenario-1
   Scenario Outline: Testing Feature 1
     Given I am Shaikh with "<User>" and "<Password>"
       | Surname | FirstName    | LastName | Native | Hometown |
@@ -21,6 +21,10 @@ Feature: Feature for Testing
       | User | Password |
       |    1 | password |
 
-  @SO-Scenario-Team2-Sprint-A-part2-1
+  @Scenario-2
   Scenario: Testing Feature 2
     Given I am Rahman
+
+  @Scenario-3
+  Scenario: Testing Feature 3
+    Given I am Hifzur
