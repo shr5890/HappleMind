@@ -1,99 +1,45 @@
 package applications.StepDefinitions;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import java.io.PrintWriter;
+import java.util.HashMap;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import feature.Reporters.BasePage;
 import framework.HTMLWriter;
-import framework.XMLGenerator;
+import framework.StepStatus.EachTestStatus;
 
 public class PreRunnerStepDefinitions extends BasePage{	
-	public Scenario FeatureScenario;
-	public Object[] arrScenarioTags;
-	public List<String> ScenarioData= new ArrayList<String>();
+	private static PrintWriter writer = null;
 
 	@Before
 	public void before(Scenario scenario) {
-		this.FeatureScenario = scenario;
-		getScenarioData(this.FeatureScenario);
-		arrScenarioTags = FeatureScenario.getSourceTagNames().toArray();		
-		HTMLWriter HW = new HTMLWriter();
-		HW.generateMenuList(arrScenarioTags[0].toString());
-		HW.generateFooter(XMLGenerator.Scenarios.size());
-		System.out.println(arrScenarioTags[0].toString());
+		TestStatus = EachTestStatus.NORUN;
+		DLStatus = null;
+		intHidePointer = 1;
+		HashMap<String,String> ScenarioData = new HashMap<String,String>();
+		ScenarioData = getScenarioData(scenario);
+		writer = new HTMLWriter().initializeMenuContent(ScenarioData);
 	}
-	
+
 	@After
-	public void after() {
-		try{
-		////System.out.println(FeatureScenario.getStatus());
-		System.out.println(FeatureScenario.getStatus());
-		ScenarioData.add(FeatureScenario.getStatus());				
-		ReportScenarios.put(arrScenarioTags[0].toString(), ScenarioData);
-		ReportScenarioSteps.put(arrScenarioTags[0].toString(), ScenarioSteps);
-		}catch(Exception e){
-			e.printStackTrace();
-		}
+	public void after(Scenario scenario) {
+		new HTMLWriter().finishMenuContent(writer);
+		TestScriptStatus.put(scenario.getSourceTagNames().toArray()[0].toString(), TestStatus);
 	}
 
-	public void getScenarioData(Scenario scenario){
-		String arrFeatureID = FeatureScenario.getId().substring(0, FeatureScenario.getId().indexOf(';')).toUpperCase();
-		System.out.println(arrFeatureID);
-		ScenarioData.add(arrFeatureID);
-		ScenarioData.add(FeatureScenario.getName());		
+	public HashMap<String,String> getScenarioData(Scenario scenario){
+		HashMap<String,String> ScenarioData = new HashMap<String,String>();
+		String arrFeatureID = scenario.getId().substring(0, scenario.getId().indexOf(';')).toUpperCase();
+		Object[] arrScenarioTags = scenario.getSourceTagNames().toArray();
+		ScenarioData.put("Feature",arrFeatureID);
+		ScenarioData.put("Scenario",scenario.getName());
+		ScenarioData.put("ScenarioTag", arrScenarioTags[0].toString());
+		ScenarioData.put("FeatureTag", arrScenarioTags[1].toString());
+		return ScenarioData;		
 	}
 	
-	/*@Test
-	public void testCase1() {
-		System.out.println("in test case 1");
-	}*/
-
-	// test case 2
-//	@Test
-//	public void testCase2() {
-//		System.out.println("in test case 2");
-//	}
-
-	/*@BeforeMethod
-	public void beforeMethod() {
-		System.out.println("in beforeMethod");
+	public static PrintWriter getHTMLWriter(){
+		return writer;
 	}
-//
-//	@AfterMethod
-//	public void afterMethod() {
-//		System.out.println("in afterMethod");
-//	}*/
-//
-//	@BeforeClass
-//	public void beforeClass() {
-//		System.out.println("in beforeClass");
-//	}
-//
-//	@AfterClass
-//	public void afterClass() {
-//		System.out.println("in afterClass");
-//	}
-//
-//	@BeforeTest
-//	public void beforeTest() {
-//		System.out.println("in beforeTest");
-//	}
-//
-//	@AfterTest
-//	public void afterTest() {
-//		System.out.println("in afterTest");
-//	}
-
-	/*@BeforeSuite
-	public void beforeSuite() {
-		System.out.println("in beforeSuite");
-	}
-
-	@AfterSuite
-	public void afterSuite() {
-		System.out.println("in afterSuite");
-	}*/
 }

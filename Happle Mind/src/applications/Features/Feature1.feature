@@ -21,6 +21,6 @@ Feature: Feature for Testing
       | User | Password |
       |    1 | password |
 
-  @Scenario2
+  @SO-Scenario-Team2-Sprint-A-part2-1
   Scenario: Testing Feature 2
     Given I am Rahman

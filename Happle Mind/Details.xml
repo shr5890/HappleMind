@@ -3,14 +3,14 @@
 <excelfile name="TestscriptManager.xls">
 <sheetname name="Set1">
 <testcasenumber id="2">
-<scenariodesc>Set 1 Test scenario 2</scenariodesc>
-<scenarioid>@Scenario2</scenarioid>
 <Scenariono>2</Scenariono>
+<scenarioid>@SO-Scenario-Team2-Sprint-A-part2-1</scenarioid>
+<scenariodesc>Set 1 Test scenario 2</scenariodesc>
 </testcasenumber>
 <testcasenumber id="4">
-<scenariodesc>Set 1 Test scenario 4</scenariodesc>
-<scenarioid>@Scenario1</scenarioid>
 <Scenariono>4</Scenariono>
+<scenarioid>@Scenario1</scenarioid>
+<scenariodesc>Set 1 Test scenario 4</scenariodesc>
 </testcasenumber>
 </sheetname>
 </excelfile>

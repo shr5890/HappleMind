@@ -1,5 +1,6 @@
 package framework;
 
+import java.awt.Desktop;
 import java.io.File;
 import java.util.*;
 
@@ -33,10 +34,15 @@ public class TestRunner {
 			//HTML Report Creation
 			HTMLWriter HW = new HTMLWriter();
 			FilePath = HW.createReportDirectory(strCurrentDateandTime);
+			HW.createReportPage();
 			HW.generateHeader(strCurrentDateandTime);
-//			HW.generateMenuList();
 			CucumberRuntime CR = new CucumberRuntime();
 			CR.CucumberRunner();
+			HW.generateFooter(XMLGenerator.Scenarios.size());
+			HW.generateMenuList(XMLGenerator.Scenarios);
+			HW.generateSummaryReport("Test Summary Report");
+			Desktop.getDesktop().browse(new File(FilePath.toString()+"\\Report.html").toURI());
+//			HW.generateFooter(TotalTCs);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
